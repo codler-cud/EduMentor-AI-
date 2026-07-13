@@ -1,0 +1,17 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# EduMentor AI – Python Dependencies
+# Install with: pip install -r requirements.txt
+# ──────────────────────────────────────────────────────────────────────────────
+
+# Web Framework
+Flask==3.0.3
+Werkzeug==3.0.3
+
+# Environment variable management
+python-dotenv==1.0.1
+
+# IBM watsonx.ai SDK
+ibm-watsonx-ai==1.1.2
+
+# Production WSGI server
+gunicorn==22.0.0
