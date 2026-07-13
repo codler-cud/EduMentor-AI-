@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EduMentor AI – Intelligent Personalized Learning Assistant powered by IBM watsonx.ai and IBM Granite Foundation Models." />
+  <meta name="theme-color" content="#6366f1" />
+  <title>EduMentor AI – Intelligent Personalized Learning Assistant</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts – Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- EduMentor AI Custom Styles -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     NAVIGATION BAR
+══════════════════════════════════════════════════════════════════ -->
+<nav class="navbar-edumentor">
+  <div class="container-xl">
+    <div class="d-flex align-items-center justify-content-between py-1">
+
+      <!-- Brand -->
+      <a href="/" class="navbar-brand-wrap text-decoration-none">
+        <div class="brand-icon">
+          <i class="bi bi-mortarboard-fill"></i>
+        </div>
+        <div>
+          <span style="font-size:1rem;">EduMentor AI</span>
+          <div style="font-size:.68rem;font-weight:500;color:var(--text-muted);margin-top:-.1rem;letter-spacing:.03em;">Powered by IBM Granite</div>
+        </div>
+      </a>
+
+      <!-- Nav links (desktop) -->
+      <div class="d-none d-md-flex align-items-center gap-1">
+        <a href="#features"  class="nav-link-custom">Features</a>
+        <a href="#how-it-works" class="nav-link-custom">How it Works</a>
+        <a href="https://www.ibm.com/products/watsonx-ai" target="_blank" rel="noopener" class="nav-link-custom">IBM watsonx.ai</a>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="d-flex align-items-center gap-2">
+        <span class="ibm-badge d-none d-sm-inline-flex">
+          <i class="bi bi-cpu-fill"></i> IBM Granite
+        </span>
+        <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle theme">
+          <i class="bi bi-moon-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════════════════════════════════ -->
+<section class="hero-section" id="features">
+  <div class="container-xl">
+    <div class="row align-items-center g-4">
+
+      <!-- Hero Copy -->
+      <div class="col-lg-7">
+        <div class="hero-badge">
+          <i class="bi bi-stars"></i>
+          Agentic AI · IBM Granite Foundation Models
+        </div>
+        <h1 class="hero-title">
+          Your Personal<br>
+          <span style="background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">AI Learning Mentor</span>
+        </h1>
+        <p class="hero-subtitle">
+          Instantly understand any concept, generate revision notes, take auto-created quizzes,
+          and get personalised study advice — all powered by IBM watsonx.ai.
+        </p>
+
+        <!-- Feature Chips -->
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;">
+          <span class="feature-pill"><i class="bi bi-lightning-charge-fill" style="color:#f59e0b;"></i> Instant Explanations</span>
+          <span class="feature-pill"><i class="bi bi-journal-text" style="color:#6366f1;"></i> Revision Notes</span>
+          <span class="feature-pill"><i class="bi bi-patch-question-fill" style="color:#06b6d4;"></i> Auto Quiz</span>
+          <span class="feature-pill"><i class="bi bi-graph-up-arrow" style="color:#10b981;"></i> Study Tips</span>
+          <span class="feature-pill"><i class="bi bi-shield-check" style="color:#8b5cf6;"></i> PDF Export</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">8+</div>
+            <div class="hero-stat-label">AI Sections</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">5</div>
+            <div class="hero-stat-label">MCQ Questions</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">3</div>
+            <div class="hero-stat-label">Difficulty Levels</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">∞</div>
+            <div class="hero-stat-label">Subjects</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="col-lg-5 hero-visual">
+        <div class="hero-card-float">
+          <div class="icon-circle">🧠</div>
+          <div style="font-weight:700;font-size:1rem;margin-bottom:.5rem;">IBM Granite AI Tutor</div>
+          <div style="font-size:.82rem;opacity:.8;line-height:1.6;">
+            Explaining concepts · Creating quizzes · Generating notes · Recommending next steps — all in real time.
+          </div>
+          <div style="margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap;">
+            <span style="font-size:.72rem;background:rgba(255,255,255,.15);padding:.2rem .6rem;border-radius:999px;">📚 Explanation</span>
+            <span style="font-size:.72rem;background:rgba(255,255,255,.15);padding:.2rem .6rem;border-radius:999px;">📝 Notes</span>
+            <span style="font-size:.72rem;background:rgba(255,255,255,.15);padding:.2rem .6rem;border-radius:999px;">❓ Quiz</span>
+            <span style="font-size:.72rem;background:rgba(255,255,255,.15);padding:.2rem .6rem;border-radius:999px;">💡 Tips</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     MAIN APP SHELL
+══════════════════════════════════════════════════════════════════ -->
+<main class="container-xl px-0">
+  <div class="app-shell">
+
+    <!-- ────────────────────────────────────────────────
+         SIDEBAR – CHAT HISTORY
+    ──────────────────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar" aria-label="Chat History">
+      <div class="sidebar-header">
+        <span><i class="bi bi-clock-history me-2" style="color:var(--accent-purple);"></i>Learning History</span>
+        <button class="sidebar-clear-btn" id="clearHistoryBtn" title="Clear all history">
+          <i class="bi bi-trash3"></i> Clear
+        </button>
+      </div>
+      <div class="history-list" id="historyList">
+        <!-- Populated by JS -->
+      </div>
+    </aside>
+
+    <!-- ────────────────────────────────────────────────
+         MAIN CONTENT
+    ──────────────────────────────────────────────── -->
+    <div class="main-content">
+
+      <!-- ┌─────────────────────────────────────────────┐ -->
+      <!-- │  INPUT PANEL                                │ -->
+      <!-- └─────────────────────────────────────────────┘ -->
+      <div class="edu-card" id="how-it-works">
+        <div class="card-header-custom">
+          <div class="card-title-custom">
+            <div class="icon icon-purple"><i class="bi bi-robot"></i></div>
+            <span>Configure Your Learning Session</span>
+          </div>
+          <span class="ibm-badge d-none d-md-inline-flex"><i class="bi bi-activity me-1"></i>AI Ready</span>
+        </div>
+
+        <div class="card-body-custom">
+          <div class="row g-3">
+
+            <!-- Subject Input -->
+            <div class="col-md-6">
+              <label class="form-label-custom" for="subjectInput">
+                <i class="bi bi-book me-1"></i> Subject
+              </label>
+              <input
+                id="subjectInput"
+                type="text"
+                class="form-control-custom"
+                placeholder="e.g. Mathematics, Physics, History…"
+                autocomplete="off"
+                aria-label="Enter subject"
+              />
+              <!-- Quick-fill subject pills -->
+              <div class="feature-pills mt-2" id="subjectSuggestions" style="font-size:.75rem;">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+
+            <!-- Topic Input -->
+            <div class="col-md-6">
+              <label class="form-label-custom" for="topicInput">
+                <i class="bi bi-lightbulb me-1"></i> Topic
+              </label>
+              <input
+                id="topicInput"
+                type="text"
+                class="form-control-custom"
+                placeholder="e.g. Quadratic Equations, Newton's Laws…"
+                autocomplete="off"
+                aria-label="Enter topic"
+              />
+            </div>
+
+            <!-- Difficulty Selector -->
+            <div class="col-12">
+              <label class="form-label-custom">
+                <i class="bi bi-bar-chart-steps me-1"></i> Difficulty Level
+              </label>
+              <div class="difficulty-selector">
+                <button class="difficulty-btn" data-diff="Beginner" aria-label="Beginner level">
+                  🌱 Beginner
+                </button>
+                <button class="difficulty-btn" data-diff="Intermediate" aria-label="Intermediate level">
+                  🚀 Intermediate
+                </button>
+                <button class="difficulty-btn" data-diff="Advanced" aria-label="Advanced level">
+                  🔬 Advanced
+                </button>
+              </div>
+            </div>
+
+            <!-- Generate Button -->
+            <div class="col-12">
+              <button class="btn-generate" id="generateBtn" aria-label="Generate AI learning content">
+                <i class="bi bi-stars"></i>
+                <span>Generate Learning Content</span>
+                <i class="bi bi-arrow-right-short" style="font-size:1.1rem;"></i>
+              </button>
+            </div>
+
+          </div><!-- /row -->
+        </div><!-- /card-body -->
+      </div><!-- /input card -->
+
+      <!-- ┌─────────────────────────────────────────────┐ -->
+      <!-- │  AI RESPONSE OUTPUT AREA                   │ -->
+      <!-- └─────────────────────────────────────────────┘ -->
+      <div class="edu-card">
+        <div class="card-header-custom">
+          <div class="card-title-custom">
+            <div class="icon icon-violet"><i class="bi bi-cpu-fill"></i></div>
+            <span>AI Learning Response</span>
+          </div>
+        </div>
+        <div class="card-body-custom" style="padding:0;">
+
+          <!-- ── Welcome / Empty State ─────────────────── -->
+          <div class="welcome-state" id="welcomeState">
+            <div class="welcome-icon-wrap">🎓</div>
+            <div class="welcome-title">Ready to Learn?</div>
+            <div class="welcome-desc">
+              Enter a subject and topic above, choose your difficulty, and let IBM Granite AI create
+              a complete personalised learning session just for you.
+            </div>
+            <div class="feature-pills">
+              <span class="feature-pill">📚 Concept Explanation</span>
+              <span class="feature-pill">📝 Revision Notes</span>
+              <span class="feature-pill">⭐ Key Points</span>
+              <span class="feature-pill">❓ Quiz</span>
+              <span class="feature-pill">💡 Study Tips</span>
+              <span class="feature-pill">⚠️ Common Mistakes</span>
+              <span class="feature-pill">🔗 Related Topics</span>
+              <span class="feature-pill">📌 Summary</span>
+            </div>
+          </div>
+
+          <!-- ── Loading Overlay ──────────────────────── -->
+          <div class="loading-overlay" id="loadingOverlay" aria-live="polite" aria-label="Loading AI response">
+            <div class="loading-brain" aria-hidden="true">
+              <div class="brain-ring"></div>
+              <div class="brain-ring"></div>
+              <div class="brain-ring"></div>
+              <div class="brain-core">🧠</div>
+            </div>
+            <div class="loading-text">
+              IBM Granite is thinking<span class="loading-dots"></span>
+            </div>
+            <div class="loading-steps" id="loadingSteps">
+              <!-- Step pills injected by JS -->
+            </div>
+          </div>
+
+          <!-- ── Response Area ────────────────────────── -->
+          <div class="response-area px-3 pb-3" id="responseArea">
+
+            <!-- Response Header -->
+            <div class="response-header mt-3">
+              <div class="response-title-area">
+                <h2 id="resTopic">Topic</h2>
+                <div class="response-meta">
+                  <span><i class="bi bi-book me-1"></i><span id="resSubject">Subject</span></span>
+                  <span>·</span>
+                  <span><i class="bi bi-bar-chart-line me-1"></i><span id="resDiff">Difficulty</span></span>
+                  <span>·</span>
+                  <span><i class="bi bi-cpu me-1"></i>IBM Granite AI</span>
+                </div>
+              </div>
+              <div class="response-actions">
+                <button class="btn-action" id="copyBtn" aria-label="Copy response">
+                  <i class="bi bi-clipboard"></i> Copy
+                </button>
+                <button class="btn-action" id="downloadBtn" aria-label="Download as PDF">
+                  <i class="bi bi-file-earmark-pdf"></i> PDF
+                </button>
+              </div>
+            </div>
+
+            <!-- Section Grid: Explanation + Revision Notes -->
+            <div class="section-grid mt-3">
+
+              <!-- Concept Explanation -->
+              <div class="edu-card">
+                <div class="card-header-custom">
+                  <div class="card-title-custom">
+                    <div class="icon icon-purple"><i class="bi bi-book-half"></i></div>
+                    📚 Concept Explanation
+                  </div>
+                </div>
+                <div class="card-body-custom content-section" id="secExplanation">
+                  <!-- Filled by JS -->
+                </div>
+              </div>
+
+              <!-- Revision Notes -->
+              <div class="edu-card">
+                <div class="card-header-custom">
+                  <div class="card-title-custom">
+                    <div class="icon icon-emerald"><i class="bi bi-journal-text"></i></div>
+                    📝 Revision Notes
+                  </div>
+                </div>
+                <div class="card-body-custom" id="secNotes">
+                  <!-- Filled by JS -->
+                </div>
+              </div>
+
+            </div><!-- /section-grid row 1 -->
+
+            <!-- Key Points (Full Width) -->
+            <div class="edu-card mt-3">
+              <div class="card-header-custom">
+                <div class="card-title-custom">
+                  <div class="icon icon-amber"><i class="bi bi-star-fill"></i></div>
+                  ⭐ Key Points
+                </div>
+              </div>
+              <div class="card-body-custom" id="secKeyPoints">
+                <!-- Filled by JS -->
+              </div>
+            </div>
+
+            <!-- Quiz (Full Width) -->
+            <div class="edu-card mt-3">
+              <div class="card-header-custom">
+                <div class="card-title-custom">
+                  <div class="icon icon-cyan"><i class="bi bi-patch-question-fill"></i></div>
+                  ❓ Quiz Questions
+                </div>
+                <span style="font-size:.78rem;color:var(--text-muted);">5 MCQs with answers</span>
+              </div>
+              <div class="card-body-custom" id="secQuiz">
+                <!-- Filled by JS -->
+              </div>
+            </div>
+
+            <!-- Study Tips + Common Mistakes -->
+            <div class="section-grid mt-3">
+
+              <!-- Study Tips -->
+              <div class="edu-card">
+                <div class="card-header-custom">
+                  <div class="card-title-custom">
+                    <div class="icon icon-violet"><i class="bi bi-lightbulb-fill"></i></div>
+                    💡 Study Tips
+                  </div>
+                </div>
+                <div class="card-body-custom" id="secStudyTips">
+                  <!-- Filled by JS -->
+                </div>
+              </div>
+
+              <!-- Common Mistakes -->
+              <div class="edu-card">
+                <div class="card-header-custom">
+                  <div class="card-title-custom">
+                    <div class="icon icon-rose"><i class="bi bi-exclamation-triangle-fill"></i></div>
+                    ⚠️ Common Mistakes
+                  </div>
+                </div>
+                <div class="card-body-custom" id="secMistakes">
+                  <!-- Filled by JS -->
+                </div>
+              </div>
+
+            </div><!-- /section-grid row 2 -->
+
+            <!-- Related Topics -->
+            <div class="edu-card mt-3">
+              <div class="card-header-custom">
+                <div class="card-title-custom">
+                  <div class="icon icon-cyan"><i class="bi bi-diagram-3-fill"></i></div>
+                  🔗 Related Topics
+                </div>
+                <span style="font-size:.78rem;color:var(--text-muted);">Click a topic to explore it</span>
+              </div>
+              <div class="card-body-custom" id="secRelated">
+                <!-- Filled by JS -->
+              </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="edu-card mt-3">
+              <div class="card-header-custom">
+                <div class="card-title-custom">
+                  <div class="icon icon-purple"><i class="bi bi-pin-angle-fill"></i></div>
+                  📌 Topic Summary
+                </div>
+                <span style="font-size:.78rem;color:var(--text-muted);">Under 150 words</span>
+              </div>
+              <div class="card-body-custom" id="secSummary">
+                <!-- Filled by JS -->
+              </div>
+            </div>
+
+            <!-- Bottom Action Bar -->
+            <div class="d-flex gap-2 justify-content-end mt-3 flex-wrap">
+              <button class="btn-action" id="copyBtn2" onclick="document.getElementById('copyBtn').click()" style="background:rgba(99,102,241,.1);color:var(--accent-purple);border-color:rgba(99,102,241,.3);">
+                <i class="bi bi-clipboard"></i> Copy All
+              </button>
+              <button class="btn-action" id="downloadBtn2" onclick="document.getElementById('downloadBtn').click()" style="background:rgba(10,185,129,.1);color:var(--accent-emerald);border-color:rgba(16,185,129,.3);">
+                <i class="bi bi-file-earmark-arrow-down"></i> Download PDF
+              </button>
+            </div>
+
+          </div><!-- /response-area -->
+
+        </div><!-- /card-body -->
+      </div><!-- /response card -->
+
+    </div><!-- /main-content -->
+  </div><!-- /app-shell -->
+</main>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     MOBILE SIDEBAR TOGGLE BUTTON
+══════════════════════════════════════════════════════════════════ -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Open history sidebar" title="History">
+  <i class="bi bi-clock-history"></i>
+</button>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     TOAST NOTIFICATION CONTAINER
+══════════════════════════════════════════════════════════════════ -->
+<div class="toast-container-custom" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════════ -->
+<footer class="app-footer">
+  <div class="container-xl">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-icon" style="width:28px;height:28px;font-size:.8rem;"><i class="bi bi-mortarboard-fill"></i></div>
+        EduMentor AI
+      </div>
+      <div style="text-align:center;">
+        Built with ❤️ using <strong>IBM watsonx.ai</strong> &amp; <strong>IBM Granite Foundation Models</strong>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.ibm.com/products/watsonx-ai" target="_blank" rel="noopener">IBM watsonx.ai</a>
+        <a href="https://www.ibm.com/granite" target="_blank" rel="noopener">IBM Granite</a>
+        <a href="/api/health">API Health</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- EduMentor AI Application JS -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
